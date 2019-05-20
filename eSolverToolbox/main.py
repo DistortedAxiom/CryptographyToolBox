@@ -1,4 +1,4 @@
-from strings import StringReplacer
+from eSolverToolbox.strings import StringReplacer
 
 def start():
     x = input("Enter a string")
