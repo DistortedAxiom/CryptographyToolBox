@@ -51,6 +51,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -58,6 +59,9 @@ class Ui_MainWindow(object):
         self.stringButton.setText(_translate("MainWindow", "Strings"))
         self.feature_2.setText(_translate("MainWindow", "Feature 2"))
         self.feature_3.setText(_translate("MainWindow", "Feature 3"))
+
+    def printMessage(self):
+        print("Hello")
 
 
 

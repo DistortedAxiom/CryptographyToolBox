@@ -1,11 +1,9 @@
-from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5 import QtWidgets
 
 import sys
 
-from MainWindow import Ui_MainWindow
+from windows.MainWindow import Ui_MainWindow
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -13,13 +11,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
 
+        self.stringButton.pressed.connect(self.stringMenu)
+
         self.show()
+
+    def stringMenu(self):
+        print("String button testing")
 
 
 if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+    app = QtWidgets.QApplication([])
+    window = MainWindow()
+    app.exec_()
