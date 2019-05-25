@@ -12,12 +12,21 @@ class MainWindow(QWidget, Ui_Form):
         super(MainWindow, self).__init__(*args, *kwargs)
         self.setupUi(self)
 
-        self.stringButton.pressed.connect(self.pageTwo)
+        self.stringButton.pressed.connect(self.string_page)
+        self.feature_2.pressed.connect(self.feature_two_page)
 
         self.show()
 
-    def pageTwo(self):
+    def back_button(self):
+        self.stackedWidget.setCurrentIndex(0)
+
+    def string_page(self):
         self.stackedWidget.setCurrentIndex(1)
+        self.backBtn2.pressed.connect(self.back_button)
+
+    def feature_two_page(self):
+        self.stackedWidget.setCurrentIndex(2)
+        self.backBtn3.pressed.connect(self.back_button)
 
 
 def main():
