@@ -19,7 +19,6 @@ class MainWindow(QWidget, Ui_Form):
     def pageTwo(self):
         self.stackedWidget.setCurrentIndex(1)
 
-
 def main():
     app = QtWidgets.QApplication([])
     window = MainWindow()
