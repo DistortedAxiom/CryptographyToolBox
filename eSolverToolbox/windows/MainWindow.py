@@ -86,7 +86,7 @@ class Ui_Form(object):
         self.horizontalLayout.addWidget(self.stackedWidget)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
