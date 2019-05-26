@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import *
 
 from windows.StringReplacer import Ui_Dialog
+from PyQt5.QtCore import pyqtSlot
 
 import string
-
 
 class StringReplacerWindow(QDialog, Ui_Dialog):
 
@@ -15,11 +15,10 @@ class StringReplacerWindow(QDialog, Ui_Dialog):
 
         self.replaceButton.clicked.connect(self.string_replace)
 
-        self.exec_()
 
-    def string_replace(self):
-        StringReplacerWindow.default_string = "replaced"
-        
+    def string_replace(self, value):
+        StringReplacerWindow.default_string = value
+
 
 
 

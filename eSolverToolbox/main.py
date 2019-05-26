@@ -1,15 +1,17 @@
 from PyQt5.QtWidgets import *
 from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5.QtCore import pyqtSignal
 
 import sys
 
 from windows.MainWindow import Ui_Form
 from methods.string_replacer_dialog import *
 
-string_text = ""
-
+string_text = "default text"
 
 class MainWindow(QWidget, Ui_Form):
+
+    string_text_trigger = pyqtSignal()
 
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, *kwargs)
@@ -30,14 +32,17 @@ class MainWindow(QWidget, Ui_Form):
     def string_btn_handler(self):
         global string_text
         string_text = self.textEdit.toPlainText()
+        return string_text
 
     def open_dialog(self):
-        StringReplacerWindow()
-        self.textEdit_2.setText(StringReplacerWindow.default_string)
+        s_window = StringReplacerWindow()
+        s_window.exec_()
+        s_window.string_replace(string_text)
+        self.textEdit_2.setText(s_window.default_string)
 
     def feature_two_page(self):
         self.stackedWidget.setCurrentIndex(2)
-        self.backBtn3.click.connect(self.back_button)
+        self.backBtn3.clicked.connect(self.back_button)
 
 
 def main():
