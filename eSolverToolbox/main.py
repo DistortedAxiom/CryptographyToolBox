@@ -33,7 +33,7 @@ class MainWindow(QWidget, Ui_Form):
 
     def open_dialog(self):
         StringReplacerWindow()
-        self.textEdit_2.setText(lol_string)
+        self.textEdit_2.setText(StringReplacerWindow.default_string)
 
     def feature_two_page(self):
         self.stackedWidget.setCurrentIndex(2)
