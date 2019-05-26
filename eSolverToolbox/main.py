@@ -4,16 +4,9 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 import sys
 
 from windows.MainWindow import Ui_Form
-from windows.StringReplacer import Ui_Dialog
+from methods.string_replacer_dialog import *
 
-string_text = "abc"
-
-
-class StringReplacerWindow(QDialog, Ui_Dialog):
-
-    def __init__(self, *args, **kwargs):
-        super(StringReplacerWindow, self).__init__(*args, *kwargs)
-        self.setupUi(self)
+string_text = ""
 
 
 class MainWindow(QWidget, Ui_Form):
@@ -35,12 +28,12 @@ class MainWindow(QWidget, Ui_Form):
         self.pushButton.clicked.connect(self.open_dialog)
 
     def string_btn_handler(self):
-        text = self.textEdit.toPlainText()
-        print(string_text)
+        global string_text
+        string_text = self.textEdit.toPlainText()
 
     def open_dialog(self):
-        string_replace_window = StringReplacerWindow()
-        string_replace_window.exec()
+        StringReplacerWindow()
+        self.textEdit_2.setText(lol_string)
 
     def feature_two_page(self):
         self.stackedWidget.setCurrentIndex(2)
