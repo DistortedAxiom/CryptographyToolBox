@@ -36,7 +36,7 @@ class MainWindow(QWidget, Ui_Form):
 
     def open_dialog(self):
         s_window = StringReplacerWindow()
-        s_window.string_replace(string_text)
+        s_window.string_replace_init(string_text)
         s_window.exec_()
         self.textEdit_2.setText(s_window.replaced_string)
 

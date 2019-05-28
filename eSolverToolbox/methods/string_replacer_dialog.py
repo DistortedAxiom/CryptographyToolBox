@@ -20,7 +20,7 @@ class StringReplacerWindow(QDialog, Ui_Dialog):
 
 
     @staticmethod
-    def string_replace(value):
+    def string_replace_init(value):
         StringReplacerWindow.getter_string = value
         StringReplacerWindow.replaced_string = StringReplacerWindow.getter_string
         StringReplacerWindow.getter_list = list(StringReplacerWindow.getter_string)
